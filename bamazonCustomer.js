@@ -15,5 +15,16 @@ connection.connect((err) => {
 	else {
 		console.log("Connected as ID: " + connection.threadId);
 
+        var productQuery = "select * from products";
+
+        connection.query(productQuery, (err, res) => {
+            if (err) {throw err;}
+            else {
+                
+                console.log(res);
+
+            }
+        })
+
 	}
 });
