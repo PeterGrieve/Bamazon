@@ -1,0 +1,22 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "connects to a database and allows the user to purchase products",
+  "main": "bamazonCustomer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PeterGrieve/Bamazon.git"
+  },
+  "author": "Peter Grieve",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PeterGrieve/Bamazon/issues"
+  },
+  "homepage": "https://github.com/PeterGrieve/Bamazon#readme",
+  "dependencies": {
+    "mysql": "^2.16.0"
+  }
+}

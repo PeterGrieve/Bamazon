@@ -1,30 +1,31 @@
+var mysql = require('mysql');
 
-var mysql = require("mysql");
-
-
-var connection = mysql.createConnection({
-	host: "127.0.0.1",
-	port: 3306,
-	user: "root",
-	password: "",
-	database: "bamazon"
+var con = mysql.createConnection({
+  host: "127.0.0.1",
+  user: "root",
+  password: "Password",
+  insecureAuth : true,
+  database: "bamazon"
 });
 
-connection.connect((err) => {
-	if (err) {throw err;}
-	else {
-		console.log("Connected as ID: " + connection.threadId);
+con.connect(function(err) {
+  if (err){ throw err;}
+  else {
 
-        var productQuery = "select * from products";
+	console.log("Connected!");
 
-        connection.query(productQuery, (err, res) => {
-            if (err) {throw err;}
-            else {
-                
-                console.log(res);
+	getProducts();
 
-            }
-        })
-
-	}
+  }
 });
+
+var getQuer = "select * from products";
+
+function getProducts () {
+	con.query(getQuer, (err, res) => {
+		if (err) {throw err;}
+		else {
+			console.log(res);
+		}
+	})
+};
